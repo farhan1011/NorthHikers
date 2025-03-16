@@ -3,7 +3,7 @@ const express = require('express');
 const multer = require('multer');
 const cloudinary = require('../utils/cloudinary');
 const Blog = require('../models/blogModel');
-const Image = require('../models/ImageModel');
+const Image = require('../models/imageModel');
 
 const router = express.Router();
 const upload = multer({ dest: 'uploads/' });
