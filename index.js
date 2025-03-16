@@ -15,14 +15,7 @@ app.use("/api/blogs", blogRoutes);
 
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => console.log("MongoDB Connected Successfully"))
-.catch(err => console.log("MongoDB Connection Error:", err));
-
-
+mongoose.connect(MONGO_URI);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
