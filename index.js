@@ -11,7 +11,10 @@ app.get("/", (req, res) => {
 });
 
 const blogRoutes = require("./routes/blogRoutes");
+const userRoutes = require("./routes/userRoutes");
+
 app.use("/api/blogs", blogRoutes);
+app.use("/api/users", userRoutes);
 
 const mongoose = require("mongoose");
 
