@@ -15,8 +15,17 @@ app.use("/api/blogs", blogRoutes);
 
 const mongoose = require("mongoose");
 
-mongoose.connect(MONGO_URI);
+const MONGO_URI = process.env.MONGO_URI; // Load from .env
 
+if (!MONGO_URI) {
+  console.error("Error: MONGO_URI is not defined. Check your .env file.");
+  process.exit(1); // Exit if no MongoDB URI
+}
+
+mongoose.connect(MONGO_URI)
+  .then(() => console.log("MongoDB Connected Successfully"))
+  .catch(err => console.error("MongoDB Connection Error:", err));
+  
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
