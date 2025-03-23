@@ -12,9 +12,17 @@ app.get("/", (req, res) => {
 
 const blogRoutes = require("./routes/blogRoutes");
 const userRoutes = require("./routes/userRoutes");
+const iteneryRoutes = require("./routes/itenaryAi");
+const translateRoutes = require("./routes/translateRoutes");
+const currencyRoutes = require("./routes/currencyRoutes");
+const packingRoutes = require("./routes/packingRoutes");
 
 app.use("/api/blogs", blogRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/itinerary", iteneryRoutes);
+app.use("/api/translate", translateRoutes);
+app.use("/api/currency", currencyRoutes);
+app.use("/api/packing", packingRoutes);
 
 const mongoose = require("mongoose");
 
